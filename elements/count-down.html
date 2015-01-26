@@ -1,0 +1,37 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<script src="../bower_components/moment/moment.js"></script>
+
+<polymer-element name="count-down" attributes="mode targetdate">
+  <template>
+    {{counter}}
+  </template>
+  <script>
+    Polymer({
+      mode: "miliseconds",
+      targetdate: "20150223",
+      update: function() {
+        var diff = moment().diff(moment(this.targetdate, "YYYYMMDD"), this.mode);
+        if (diff < 0) {
+          this.counter = "in " + Math.abs(diff) + " " + this.mode;
+        } else {
+          this.counter = diff + " " + this.mode + " ago";
+        }
+        switch (this.mode) {
+          case "miliseconds":
+            interval = 1;
+            break;
+          case "seconds":
+            interval = 1000;
+            break;
+          case "minutes":
+          default:
+            interval = 1000 * 60;
+        }
+        this.async(this.update, null, interval);
+      },
+      ready: function() {
+        this.update();
+      }
+    });
+  </script>
+</polymer-element>
