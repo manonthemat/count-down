@@ -7,7 +7,7 @@
   </template>
   <script>
     Polymer({
-      mode: "miliseconds",
+      mode: "milliseconds",
       targetdate: "20150223",
       update: function() {
         var diff = moment().diff(moment(this.targetdate, "YYYYMMDD"), this.mode);
@@ -17,7 +17,7 @@
           this.counter = diff + " " + this.mode + " ago";
         }
         switch (this.mode) {
-          case "miliseconds":
+          case "milliseconds":
             interval = 1;
             break;
           case "seconds":
