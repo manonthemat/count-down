@@ -1,6 +1,6 @@
 {
   "name": "count-down",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
     "manonthemat <matthiasksieber@gmail.com>"
   ],
@@ -14,8 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "core-component-page": "Polymer/core-component-page#^0.5",
-    "polymer": "Polymer/polymer#~0.5.4",
+    "polymer": "Polymer/polymer#~1.1.1",
     "moment": "~2.9.0"
   }
 }
